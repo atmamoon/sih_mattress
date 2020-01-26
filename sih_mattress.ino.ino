@@ -22,12 +22,10 @@ void loop()
   error=ref_temperature-DHT.temperature;
   Serial.print("ERROR = ");
   Serial.println(error);
- // if (error>=2)
+  if (error>=2)
   digitalWrite(relay,HIGH);
-  //else if(error<=0)
- delay(2000);
+  else if(error<=0)
   digitalWrite(relay,LOW);
-  delay(2000);
-  //else
-  //digitalWrite(relay,HIGH);
+  else
+  digitalWrite(relay,HIGH);
 }
